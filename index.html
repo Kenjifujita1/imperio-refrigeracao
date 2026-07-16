@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<!--
+  Império Refrigeração — Belo Jardim/PE · landing de conversão (padrão /landing)
+  Objetivo único: puxar o contato pro WhatsApp 81 99435-8029.
+  Conversão do Google Ads: AW-16922731528/BmGXCIy9g78bEIjIsYU_ ("Enviar formulário de lead")
+  PENDENTE: GA4 ainda não existe para este cliente — criar propriedade e trocar o config abaixo.
+-->
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Império Refrigeração — Conserto de Geladeira em Belo Jardim/PE | Em domicílio</title>
+<meta name="description" content="Conserto de geladeira, freezer, máquina de sorvete e ar-condicionado em Belo Jardim e região. Atendimento em domicílio. Chame no WhatsApp.">
+<link rel="canonical" href="https://imperio-refrigeracao.vercel.app/">
+
+<!-- ===================== RASTREAMENTO ===================== -->
+<!-- gtag carregado pelo ID do Google Ads (a conta ainda não tem GA4).
+     Quando o GA4 existir: criar propriedade, pegar o G-XXXXXXX e adicionar gtag('config','G-...'). -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16922731528"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-16922731528');   // Google Ads
+
+  // dispara conversão quando vira lead (clique no WhatsApp)
+  function registrarLead(origem){
+    try{
+      gtag('event','generate_lead',{method:origem});
+      gtag('event','conversion',{'send_to':'AW-16922731528/BmGXCIy9g78bEIjIsYU_'});
+    }catch(e){}
+    return true;
+  }
+</script>
+<!-- ======================================================== -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0B0E11;--bg2:#11151A;--card:#161B21;--line:rgba(255,255,255,.09);
+    --txt:#F4F6F5;--muted:#9AA4AE;
+    --accent:#22D3EE;                /* ciano — frio/refrigeração */
+    --accent-ink:#04141A;
+    --wa:#25D366;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  html,body{overflow-x:hidden;max-width:100%}
+  body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:520px;margin:0 auto;padding:0 20px}
+  img{max-width:100%;display:block}
+  h1{font-size:clamp(28px,7vw,40px);font-weight:900;line-height:1.06;letter-spacing:-.03em;text-wrap:balance;overflow-wrap:break-word}
+  h2{font-size:clamp(22px,5vw,28px);font-weight:800;letter-spacing:-.02em;text-wrap:balance}
+  .accent{color:var(--accent)}
+
+  .btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;font-weight:800;font-size:17px;
+    padding:17px 20px;border-radius:14px;text-decoration:none;letter-spacing:-.01em;transition:.15s;border:none;cursor:pointer;font-family:inherit}
+  .btn:hover{transform:translateY(-2px);filter:brightness(1.05)}
+  .btn-wa{background:var(--wa);color:#04140B;box-shadow:0 12px 30px rgba(37,211,102,.28)}
+  .btn-ghost{background:transparent;color:var(--txt);border:1px solid var(--line)}
+  .sub{font-size:13px;color:var(--muted);font-weight:600;text-align:center;margin-top:8px}
+
+  .top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 0}
+  .brand{font-weight:900;font-size:18px;letter-spacing:-.02em;white-space:nowrap}
+  .online{display:inline-flex;align-items:center;gap:7px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:11.5px;font-weight:700;color:var(--muted);white-space:nowrap;flex-shrink:0}
+  .online .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent);animation:pulse 1.6s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+
+  .hero{padding:26px 0 30px;background:radial-gradient(700px 420px at 80% -10%,color-mix(in srgb,var(--accent) 16%,transparent),transparent 60%)}
+  .flag{display:inline-block;background:color-mix(in srgb,var(--accent) 14%,transparent);border:1px solid color-mix(in srgb,var(--accent) 40%,transparent);color:var(--accent);font-weight:800;font-size:12.5px;padding:6px 13px;border-radius:999px;margin-bottom:18px}
+  .hero p.lead{font-size:16.5px;color:var(--muted);font-weight:500;margin:16px 0 24px}
+  .cta-group{display:flex;flex-direction:column;gap:11px}
+
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:28px 0}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 10px;text-align:center}
+  .stat .n{font-size:26px;line-height:1.1}
+  .stat .l{font-size:11.5px;color:var(--muted);font-weight:700;margin-top:6px}
+
+  section{padding:34px 0}
+  .eyebrow{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.16em;color:var(--accent);margin-bottom:10px}
+
+  .benes{display:flex;flex-direction:column;gap:12px;margin-top:20px}
+  .bene{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;gap:14px;align-items:flex-start}
+  .bene .ic{font-size:22px;flex-shrink:0}
+  .bene h3{font-size:16px;font-weight:800;margin-bottom:3px}
+  .bene p{font-size:14px;color:var(--muted)}
+
+  .steps{display:flex;flex-direction:column;gap:12px;margin-top:20px;counter-reset:st}
+  .step{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;gap:14px;align-items:flex-start}
+  .step .num{counter-increment:st;flex-shrink:0;width:32px;height:32px;border-radius:50%;background:color-mix(in srgb,var(--accent) 14%,transparent);border:1px solid color-mix(in srgb,var(--accent) 40%,transparent);color:var(--accent);display:grid;place-items:center;font-weight:900}
+  .step .num::before{content:counter(st)}
+  .step h3{font-size:15.5px;font-weight:800;margin-bottom:2px}
+  .step p{font-size:13.5px;color:var(--muted)}
+
+  details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0;margin-top:10px;overflow:hidden}
+  summary{padding:16px 18px;font-weight:700;font-size:14.5px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:10px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";color:var(--accent);font-weight:900;font-size:20px;line-height:1}
+  details[open] summary::after{content:"–"}
+  details p{padding:0 18px 16px;font-size:14px;color:var(--muted)}
+
+  .final{background:linear-gradient(160deg,color-mix(in srgb,var(--accent) 12%,var(--card)),var(--card));border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);border-radius:22px;padding:34px 22px;text-align:center;margin:14px 0}
+  .final h2{margin-bottom:10px}
+  .final p{color:var(--muted);font-size:15px;margin-bottom:22px}
+
+  footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;color:var(--muted);font-size:12.5px}
+
+  .float{position:fixed;right:16px;bottom:16px;width:58px;height:58px;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 8px 24px rgba(37,211,102,.5);z-index:99;text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- TOPO -->
+  <div class="top">
+    <div class="brand">Império <span class="accent">Refrigeração</span></div>
+    <span class="online"><span class="dot"></span> Atendimento agora</span>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <span class="flag">❄️ Belo Jardim/PE e região</span>
+    <h1>Sua geladeira parou de gelar?</h1>
+    <p class="lead">Conserto em domicílio de geladeira, freezer, máquina de sorvete e ar-condicionado. Você chama no WhatsApp, a gente vai até você.</p>
+    <div class="cta-group">
+      <a href="https://wa.me/5581994358029?text=Ol%C3%A1!%20Vim%20pelo%20site.%20Preciso%20de%20assist%C3%AAncia%20em%20refrigera%C3%A7%C3%A3o." class="btn btn-wa" onclick="registrarLead('whatsapp_hero')" target="_blank" rel="noopener">💬 Chamar no WhatsApp agora</a>
+      <a href="#como" class="btn btn-ghost">Ver como funciona</a>
+    </div>
+    <p class="sub">Atendimento em domicílio · Você descreve o problema pelo WhatsApp</p>
+  </div>
+
+  <!-- O QUE ATENDEMOS -->
+  <div class="stats">
+    <div class="stat"><div class="n">❄️</div><div class="l">Geladeira<br>e freezer</div></div>
+    <div class="stat"><div class="n">🍦</div><div class="l">Máquina<br>de sorvete</div></div>
+    <div class="stat"><div class="n">💨</div><div class="l">Ar-<br>condicionado</div></div>
+  </div>
+
+  <!-- BENEFÍCIOS -->
+  <section>
+    <div class="eyebrow">Por que Império Refrigeração</div>
+    <h2>Refrigeração é a especialidade, não um bico.</h2>
+    <div class="benes">
+      <div class="bene"><span class="ic">🏠</span><div><h3>A gente vai até você</h3><p>Atendimento em domicílio em Belo Jardim e região. Você não precisa carregar geladeira nem freezer para lugar nenhum.</p></div></div>
+      <div class="bene"><span class="ic">🔧</span><div><h3>Do residencial ao comercial</h3><p>Geladeira e freezer de casa, máquina de sorvete e ar-condicionado — instalação e limpeza. É o que fazemos todo dia.</p></div></div>
+      <div class="bene"><span class="ic">💬</span><div><h3>Direto no WhatsApp</h3><p>Descreve o problema, manda uma foto se quiser. Sem formulário, sem espera em atendimento automático.</p></div></div>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section id="como">
+    <div class="eyebrow">Simples assim</div>
+    <h2>Como funciona</h2>
+    <div class="steps">
+      <div class="step"><div class="num"></div><div><h3>Você chama no WhatsApp</h3><p>Conta o que está acontecendo com o equipamento. Foto ou vídeo ajudam a adiantar o diagnóstico.</p></div></div>
+      <div class="step"><div class="num"></div><div><h3>A gente agenda a visita</h3><p>Combinamos o melhor horário para o atendimento em domicílio, em Belo Jardim e região.</p></div></div>
+      <div class="step"><div class="num"></div><div><h3>Conserto feito</h3><p>O técnico avalia na hora, explica o que o equipamento precisa e executa o serviço.</p></div></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section>
+    <div class="eyebrow">Ficou a dúvida?</div>
+    <h2>Perguntas frequentes</h2>
+    <details><summary>Vocês atendem em domicílio?</summary><p>Sim. O atendimento é feito na sua casa ou no seu estabelecimento, em Belo Jardim e região.</p></details>
+    <details><summary>Quais equipamentos vocês consertam?</summary><p>Geladeira e freezer, máquina de sorvete e ar-condicionado (instalação e limpeza). Se o seu equipamento for de refrigeração e não estiver na lista, chame no WhatsApp e a gente confirma se atende.</p></details>
+    <details><summary>Como peço um orçamento?</summary><p>Pelo WhatsApp. Descreva o equipamento (marca e tipo) e o que está acontecendo — quanto mais detalhe, mais rápido a gente consegue te dar o próximo passo.</p></details>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section id="contato">
+    <div class="final">
+      <h2>Geladeira parada é comida estragando.</h2>
+      <p>Chame agora no WhatsApp e conte o que está acontecendo. Atendimento em domicílio em Belo Jardim e região.</p>
+      <a href="https://wa.me/5581994358029?text=Ol%C3%A1!%20Vim%20pelo%20site.%20Preciso%20de%20assist%C3%AAncia%20em%20refrigera%C3%A7%C3%A3o." class="btn btn-wa" onclick="registrarLead('whatsapp_final')" target="_blank" rel="noopener">💬 Chamar no WhatsApp agora</a>
+      <p class="sub" style="margin-top:14px">Atendimento em domicílio · Belo Jardim/PE e região</p>
+    </div>
+  </section>
+
+  <footer>
+    Império Refrigeração · Belo Jardim/PE<br>
+    Geladeira · Freezer · Máquina de sorvete · Ar-condicionado<br>
+    WhatsApp (81) 99435-8029
+  </footer>
+</div>
+
+<!-- WhatsApp flutuante -->
+<a href="https://wa.me/5581994358029?text=Ol%C3%A1!%20Vim%20pelo%20site.%20Preciso%20de%20assist%C3%AAncia%20em%20refrigera%C3%A7%C3%A3o." class="float" onclick="registrarLead('whatsapp_float')" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg width="30" height="30" viewBox="0 0 32 32" fill="#04140B"><path d="M16 .5C7.4.5.5 7.4.5 16c0 2.8.7 5.4 2 7.7L.5 31.5l8-2.1c2.2 1.2 4.8 1.9 7.5 1.9 8.6 0 15.5-6.9 15.5-15.5S24.6.5 16 .5zm0 28.3c-2.5 0-4.8-.7-6.8-1.9l-.5-.3-4.7 1.2 1.3-4.6-.3-.5C3.9 20.7 3.2 18.4 3.2 16 3.2 8.9 8.9 3.2 16 3.2S28.8 8.9 28.8 16 23.1 28.8 16 28.8zm7.3-9.6c-.4-.2-2.4-1.2-2.8-1.3-.4-.1-.6-.2-.9.2s-1 1.3-1.2 1.5c-.2.2-.4.3-.8.1-.4-.2-1.7-.6-3.2-2-1.2-1-2-2.4-2.2-2.8-.2-.4 0-.6.2-.8.2-.2.4-.4.5-.6.2-.2.2-.4.4-.6.1-.2.1-.5 0-.7-.1-.2-.9-2.2-1.3-3-.3-.7-.6-.6-.9-.6h-.7c-.2 0-.6.1-1 .5-.3.4-1.3 1.3-1.3 3.1s1.3 3.6 1.5 3.9c.2.2 2.6 4 6.3 5.6.9.4 1.6.6 2.1.8.9.3 1.7.2 2.3.1.7-.1 2.4-1 2.7-1.9.3-.9.3-1.7.2-1.9-.1-.1-.3-.2-.7-.4z"/></svg>
+</a>
+
+</body>
+</html>
